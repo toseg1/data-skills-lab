@@ -1,0 +1,37 @@
+# Pinned environment for the Data Skills Lab.
+#
+#   python -m venv .venv
+#   source .venv/bin/activate        # Windows: .venv\Scripts\activate
+#   pip install -r requirements.txt
+#
+# Versions are pinned exactly on purpose. Grading compares your output against a
+# reference implementation, and pandas in particular changes behaviour between
+# releases, so an unpinned environment can fail an exercise your code got right.
+# Tested on Python 3.12 and 3.13.
+
+# --- the lab itself, installed in editable mode ---
+-e .
+
+# --- direct dependencies ---
+duckdb==1.5.5
+numpy==2.5.3
+pandas==3.0.5
+pyarrow==25.0.1
+rich==15.0.0
+typer==0.27.2
+
+# --- development tools (kept here so one command sets everything up) ---
+pytest==9.1.1
+ruff==0.16.6
+
+# --- transitive, pinned for reproducibility ---
+annotated-doc==0.0.5
+iniconfig==2.3.0
+markdown-it-py==4.2.0
+mdurl==0.1.2
+packaging==26.3
+pluggy==1.6.0
+Pygments==2.21.0
+python-dateutil==2.9.0.post0
+shellingham==1.5.4
+six==1.17.0
