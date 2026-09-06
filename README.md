@@ -15,12 +15,26 @@ python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-lab info                         # confirm the wiring
-lab generate --seed 1234         # build a dataset (~2s)
+lab init                         # draw a seed and build your dataset (~2s)
+lab next                         # open the first exercise
 ```
 
-`lab init`, which draws a seed for you and records it as your session, arrives
-with the grading engine. Until then `generate` takes the seed explicitly.
+Then edit the file it points you at, and run `lab check <id>`.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| `lab init` | Draw a dataset seed, record it as your session, build the data |
+| `lab next` | Show the next exercise you have not solved, with its task |
+| `lab check [selector]` | Grade an exercise, a section, a track, or everything |
+| `lab hint <id>` | Reveal one more hint. Call it again for the next |
+| `lab solve <id> --yes` | Print the reference answer |
+| `lab status` | Progress across the path |
+| `lab reseed` | New numbers for the same exercises; progress is kept |
+
+Selectors go from broad to narrow: `lab check sql` takes a whole track,
+`lab check sql/04` a section, `lab check sql/04_windows/07_lag` one exercise.
 
 `requirements.txt` pins exact versions and installs the lab itself in editable
 mode, so that one command is the whole setup. Versions are pinned deliberately:
@@ -106,7 +120,7 @@ This is the scaffold. Landing next:
 
 - [x] Repository, tooling and CI
 - [x] Seeded synthetic dataset generator
-- [ ] Exercise runner CLI and grading engine (`init`, `next`, `check`, `hint`, `solve`, `status`)
+- [x] Exercise runner CLI and grading engine (`init`, `next`, `check`, `hint`, `solve`, `status`)
 - [ ] SQL track
 - [ ] Pandas track
 - [ ] NumPy track

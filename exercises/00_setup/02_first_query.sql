@@ -1,0 +1,17 @@
+-- Setup · your first query
+--
+-- A SQL exercise is one file holding one query, run against
+-- your DuckDB warehouse. Whatever it returns is your answer.
+--
+-- TASK
+--     Return the five tickers with the largest total notional,
+--     where notional is quantity * price. Two columns named
+--     `ticker` and `notional`, biggest first.
+--
+-- Row order usually does not matter, but a "top five" question
+-- is meaningless unsorted, so this one is checked in order.
+-- That is what the meta line below switches on.
+--
+-- meta: ordered=true
+
+-- Write your query here.
