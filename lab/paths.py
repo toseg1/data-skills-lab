@@ -14,6 +14,8 @@ __all__ = [
     "CORRECTIONS_DIR",
     "DATA_DIR",
     "EXERCISES_DIR",
+    "PARQUET_DIR",
+    "RAW_DIR",
     "REPO_ROOT",
     "STATE_DIR",
     "WAREHOUSE_PATH",
@@ -47,6 +49,12 @@ DATA_DIR: Path = REPO_ROOT / "data"
 
 #: The DuckDB database the SQL track queries.
 WAREHOUSE_PATH: Path = DATA_DIR / "warehouse.duckdb"
+
+#: Curated tables as Parquet, for the Pandas and NumPy tracks.
+PARQUET_DIR: Path = DATA_DIR / "parquet"
+
+#: Messy vendor files, for the exercises that read files directly.
+RAW_DIR: Path = DATA_DIR / "raw"
 
 #: Per-learner state: the session seed and your progress.
 STATE_DIR: Path = REPO_ROOT / ".lab"
